@@ -11,32 +11,33 @@ This plugin provides simple methods to add, find, update and remove data.
 ## Usage
 
 ```js
-var db = new PouchDB('dbname');
+var db = new PouchDB('dbname')
+var api = new PouchObjectsApi(db)
 
 // all methods return promises
-db.objects.add(object)
-db.objects.add([object1, object2])
-db.objects.find(id)
-db.objects.find(object) // with id property
-db.objects.findOrAdd(id, object)
-db.objects.findOrAdd(object)
-db.objects.findOrAdd([object1, object2])
-db.objects.findAll()
-db.objects.findAll(filterFunction)
-db.objects.update(id, changedProperties)
-db.objects.update(id, updateFunction)
-db.objects.update(object)
-db.objects.update([object1, object2])
-db.objects.updateOrAdd(id, object)
-db.objects.updateOrAdd(object)
-db.objects.updateOrAdd([object1, object2])
-db.objects.updateAll(changedProperties)
-db.objects.updateAll(updateFunction)
-db.objects.remove(id)
-db.objects.remove(object)
-db.objects.removeAll()
-db.objects.removeAll(filterFunction)
-db.objects.clear()
+api.add(object)
+api.add([object1, object2])
+api.find(id)
+api.find(object) // with id property
+api.findOrAdd(id, object)
+api.findOrAdd(object)
+api.findOrAdd([object1, object2])
+api.findAll()
+api.findAll(filterFunction)
+api.update(id, changedProperties)
+api.update(id, updateFunction)
+api.update(object)
+api.update([object1, object2])
+api.updateOrAdd(id, object)
+api.updateOrAdd(object)
+api.updateOrAdd([object1, object2])
+api.updateAll(changedProperties)
+api.updateAll(updateFunction)
+api.remove(id)
+api.remove(object)
+api.removeAll()
+api.removeAll(filterFunction)
+api.clear()
 ```
 
 Find the full API documentation at **TO BE DONE**
@@ -50,13 +51,14 @@ To use this plugin, include it after `pouchdb.js` in your HTML page:
 
 ```html
 <script src="pouchdb.js"></script>
-<script src="pouchdb.db-api.js"></script>
+<script src="pouchdb.objects-api.js"></script>
 ```
 
 This plugin is also available from Bower:
 
 ```
-bower install pouchdb-hoodie-api
+bower install pouchdb
+bower install pouchdb-objects-api
 ```
 
 ### In Node.js
@@ -64,14 +66,15 @@ bower install pouchdb-hoodie-api
 Install via npm
 
 ```
-npm install pouchdb-hoodie-api
+npm install pouchdb
+npm install pouchdb-objects-api
 ```
 
 And then attach it to the `PouchDB` object
 
 ```js
 var PouchDB = require('pouchdb');
-require('pouchdb-hoodie-api')(PouchDB);
+var PouchObjectsApi = require('pouchdb-objects-api');
 ```
 
 
